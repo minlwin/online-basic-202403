@@ -30,12 +30,12 @@ public class StudentRegistryTest {
 		
 		// Execute Target Method
 		var result = registry.add(input);
-		
+
 		// Check Result
-		assertEquals(expectedId, result.getId());
-		assertEquals(name, result.getName());
-		assertEquals(phone, result.getPhone());
-		assertEquals(email, result.getEmail());
+		assertEquals(expectedId, result.id());
+		assertEquals(name, result.name());
+		assertEquals(phone, result.phone());
+		assertEquals(email, result.email());
 	}
 	
 	@Test
@@ -50,12 +50,12 @@ public class StudentRegistryTest {
 		
 		var students = registry.getAll();
 		
-		Arrays.sort(students, (a, b) -> a.getName().compareTo(b.getName()));
+		Arrays.sort(students, (a, b) -> a.name().compareTo(b.name()));
 		
-		assertEquals(1, registry.getAll()[0].getId());
-		assertEquals("Thidar", registry.getAll()[0].getName());
+		assertEquals(1, registry.getAll()[0].id());
+		assertEquals("Thidar", registry.getAll()[0].name());
 		
-		assertEquals(5, students[registry.getAll().length - 1].getId());
-		assertEquals("Tun Tun", students[registry.getAll().length - 1].getName());
+		assertEquals(5, students[registry.getAll().length - 1].id());
+		assertEquals("Tun Tun", students[registry.getAll().length - 1].name());
 	}
 }
