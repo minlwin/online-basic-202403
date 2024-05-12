@@ -15,4 +15,8 @@ public class SportCar extends Car {
 	public void turboOn() {
 		System.out.println("Turbo Mode On");
 	}
+	
+	public void drive() {
+		System.out.println("Driving too fast!");
+	}
 }

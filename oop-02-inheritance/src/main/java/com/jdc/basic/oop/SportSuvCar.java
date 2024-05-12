@@ -9,4 +9,9 @@ public class SportSuvCar extends SportCar{
 	public void startFourWheel() {
 		System.out.println("Driving with four wheel mode.");
 	}
+	
+	@Override
+	public void drive() {
+		System.out.println("Driving and drifting on rough road.");
+	}
 }

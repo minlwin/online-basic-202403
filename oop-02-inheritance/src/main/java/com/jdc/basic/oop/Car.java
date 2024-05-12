@@ -1,6 +1,6 @@
 package com.jdc.basic.oop;
 
-public class Car {
+public class Car extends Vahicle{
 
 	protected double power;
 	

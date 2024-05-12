@@ -17,7 +17,11 @@ public class InheritanceTest {
 	
 	@Test
 	void test2() {
-		SportSuvCar sportSuvCar = new SportSuvCar();
-		sportSuvCar.startFourWheel();
+		
+		Car car = new SportCar(10);
+		car.drive();
+		
+		SportCar spCar = (SportCar) car;
+		spCar.turboOn();
 	}
 }
