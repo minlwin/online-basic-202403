@@ -24,7 +24,14 @@ public class PosApplication {
 			new ProductAddFeature(1),
 			new ProductSearchFeature(2),
 			new SalesItemsFeature(3),
-			new SaleHistoryFeature(4)
+			new SaleHistoryFeature(4),
+			new AbstractFeature(5, "Show Voucher") {
+				
+				@Override
+				public void doBusiness() {
+					System.out.println("Show Voucher Featrue");
+				}
+			}
 		};
 		
 		new PosApplication(features).launch();
