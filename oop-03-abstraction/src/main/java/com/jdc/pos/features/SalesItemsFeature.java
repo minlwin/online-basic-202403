@@ -2,6 +2,7 @@ package com.jdc.pos.features;
 
 import java.util.Arrays;
 
+import com.jdc.console.app.AbstractFeature;
 import com.jdc.pos.models.Product;
 import com.jdc.pos.models.ProductModel;
 import com.jdc.pos.models.Sale;

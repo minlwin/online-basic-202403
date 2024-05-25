@@ -1,5 +1,6 @@
 package com.jdc.pos.features;
 
+import com.jdc.console.app.AbstractFeature;
 import com.jdc.pos.models.Sale;
 import com.jdc.pos.models.SaleModel;
 

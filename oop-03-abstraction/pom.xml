@@ -8,6 +8,11 @@
 	
 	<dependencies>
 		<dependency>
+			<groupId>com.jdc.basic</groupId>
+			<artifactId>oop-05-console-app-framework</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.10.2</version>
