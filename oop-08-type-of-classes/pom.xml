@@ -31,5 +31,7 @@
 	<modules>
 		<module>prj01-enum-classes</module>
 		<module>prj02-annotations</module>
+		<module>prj03-records</module>
+		<module>prj04-sealed-classes</module>
 	</modules>
 </project>
