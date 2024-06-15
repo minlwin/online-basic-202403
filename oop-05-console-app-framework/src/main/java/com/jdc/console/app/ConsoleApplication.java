@@ -18,14 +18,15 @@ public class ConsoleApplication {
 		showMessage("Pos Application");
 		
 		do {
-			var feature = getUserSelectFeature();
 			
-			if(null == feature) {
-				break;
-			} 
-			
-			feature.doBusiness();
-			
+			try {
+				var feature = getUserSelectFeature();
+				feature.doBusiness();
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Please enter valid menu id.");
+				System.out.println();
+			}
+
 		} while(doAgain());
 	}
 
@@ -41,11 +42,7 @@ public class ConsoleApplication {
 		var result = scanner.nextLine();
 		var resultId = Integer.parseInt(result);
 		
-		if(resultId <= features.length) {
-			return features[resultId - 1];
-		}
-		
-		return null;
+		return features[resultId - 1];
 	}
 
 	private boolean doAgain() {

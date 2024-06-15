@@ -34,4 +34,23 @@ public abstract class AbstractFeature {
 		var input = getInputString(message);
 		return Integer.parseInt(input);
 	}
+	
+	protected int getInputInt(String message, int retryCount, String errorMessage) {
+		
+		var count = 0; 
+		
+		while(count < retryCount) {
+			try {
+				var input = getInputString(message);
+				return Integer.parseInt(input);
+			} catch (NumberFormatException e) {
+				System.out.println(errorMessage);
+				System.out.println();
+			}
+			
+			count ++;
+		}
+		
+		throw new RuntimeException("You have failed %d count.".formatted(count));
+	}	
 }

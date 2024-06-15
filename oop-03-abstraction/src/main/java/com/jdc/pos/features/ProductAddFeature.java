@@ -14,18 +14,25 @@ public class ProductAddFeature extends AbstractFeature {
 
 	@Override
 	public void doBusiness() {
-		System.out.println("Please enter product information");
+		
+		try {
+			System.out.println("Please enter product information");
 
-		// get product name
-		var name = getInputString("Enter Name : ");
+			// get product name
+			var name = getInputString("Enter Name : ");
 
-		// get product price
-		var price = getInputInt("Enter Price : ");
+			// get product price
+			var price = getInputInt("Enter Price : ", 3, "Please enter price with digit.");
 
-		// add to model
-		int id = model.addProduct(name, price);
+			// add to model
+			int id = model.addProduct(name, price);
 
-		System.out.printf("%s has been created at id %d.%n%n", name, id);
+			System.out.printf("%s has been created at id %d.%n%n", name, id);
+
+		} catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+			System.out.println();
+		}
 	}
 
 }
