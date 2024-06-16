@@ -21,5 +21,6 @@
 	</build>
 	<modules>
 		<module>ep01-callstack</module>
+		<module>ep02-exception-types-and-overriding</module>
 	</modules>
 </project>

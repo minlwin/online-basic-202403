@@ -1,6 +1,7 @@
 package com.jdc.pos.features;
 
 import com.jdc.console.app.AbstractFeature;
+import com.jdc.pos.features.exceptions.InputValueInvalidException;
 import com.jdc.pos.models.ProductModel;
 
 public class ProductAddFeature extends AbstractFeature {
@@ -28,10 +29,12 @@ public class ProductAddFeature extends AbstractFeature {
 			int id = model.addProduct(name, price);
 
 			System.out.printf("%s has been created at id %d.%n%n", name, id);
-
-		} catch (RuntimeException e) {
+		
+		} catch(InputValueInvalidException e) {
 			System.out.println(e.getMessage());
 			System.out.println();
+		} catch (RuntimeException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
