@@ -1,0 +1,5 @@
+1		1990-01-01	Female	0911112222	@gmail.com	1
+2	Nilar		Female	0922223333	nilar@gmail.com	1
+3	Thander	2004-12-10		0933334444	thander@gmail.com	1
+4			Male			2
+5				0955556666		3
