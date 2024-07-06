@@ -1,17 +1,16 @@
 package com.jdc.collections;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 
-public class StudentRepositoryWithSet implements StudentRepository{
+public class StudentRepositoryWithList implements StudentRepository {
 
-	private Set<Student> set;
-	
+	private List<Student> list;
 	private static int ID = 0;
 	
-	public StudentRepositoryWithSet() {
-		set = new LinkedHashSet<>();
+	public StudentRepositoryWithList() {
+		list = new ArrayList<>();
 	}
 	
 	@Override
@@ -19,21 +18,20 @@ public class StudentRepositoryWithSet implements StudentRepository{
 		
 		validate(student);
 		
-		set.add(student.withId(++ ID));
+		list.add(student.withId(++ ID));
 		
 		return ID;
 	}
 
-
 	@Override
 	public Collection<Student> getAll() {
-		return Set.copyOf(set);
+		return List.copyOf(list);
 	}
 
 	@Override
 	public Student findById(int id) {
 		
-		for(var student : set) {
+		for(var student : list) {
 			if(student.id() == id) {
 				return student;
 			}
@@ -44,14 +42,8 @@ public class StudentRepositoryWithSet implements StudentRepository{
 
 	@Override
 	public boolean delete(int id) {
-		
 		var student = findById(id);
-		
-		if(null != student) {
-			return set.remove(student);
-		}
-		
-		return false;
+		return list.remove(student);
 	}
 
 	@Override
@@ -59,8 +51,13 @@ public class StudentRepositoryWithSet implements StudentRepository{
 		
 		validate(student);
 		
-		if(delete(student.id())) {
-			return set.add(student);
+		var oldStudent = findById(student.id());
+		
+		var index = list.indexOf(oldStudent);
+		
+		if(index >=0 && index <= list.size() - 1) {
+			list.set(index, student);
+			return true;
 		}
 		
 		return false;
