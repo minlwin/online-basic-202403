@@ -1,6 +1,7 @@
 package com.jdc.collections;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,9 +29,21 @@ public class BalancedCheckerTest {
 		"()[",
 		"",
 		"[]((){}",
+		"([[[}}}",
 		"[()]){([])}"
 	})
 	void test_false(String value) {
 		assertFalse(checker.isBalance(value));
+	}
+	
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"[ ",
+		"() ",
+		"abcd",
+	})
+	void test_exception(String value) {
+		assertThrows(IllegalArgumentException.class, 
+				() -> checker.isBalance(value));
 	}
 }

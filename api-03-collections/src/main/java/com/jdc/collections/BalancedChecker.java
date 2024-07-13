@@ -19,18 +19,31 @@ public class BalancedChecker {
 		}
 		
 		for(var c : chars) {
-			if(isOpen(c)) {
-				stack.offer(c);
-			} else {
+			switch(c) {
+			case '(', '[', '{' -> stack.offer(c);
+			case ')', ']', '}' -> {
+				var last = stack.poll();
 				
+				if(null == last) {
+					return false;
+				}
+				
+				if(!isMatch(last, c)) {
+					return false;
+				}
+			}
+			default -> throw new IllegalArgumentException();
 			}
 		}
 		
-		return false;
+		return stack.isEmpty();
 	}
 
-	private boolean isOpen(char c) {
-		return c == '(' || c == '[' || c == '{';
+	private boolean isMatch(Character last, char current) {
+		return (last == '(' && current == ')') 
+				|| (last == '[' && current == ']') 
+				|| (last == '{' && current == '}') ;
 	}
+
 
 }
