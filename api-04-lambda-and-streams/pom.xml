@@ -31,5 +31,6 @@
 	<modules>
 		<module>ep01-lambda-expression</module>
 		<module>ep02-functional-interfaces</module>
+		<module>ep03-stream-creation</module>
 	</modules>
 </project>
