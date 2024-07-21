@@ -1,0 +1,6 @@
+1	Coke	1000
+2	Potato Chips	1500
+3	Fish Chips	1200
+4	Pepsi	800
+5	7 Up	900
+6	Marinda	1200

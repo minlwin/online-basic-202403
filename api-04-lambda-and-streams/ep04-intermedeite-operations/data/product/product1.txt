@@ -1,0 +1,9 @@
+1	Think Pad Laptop	1800000
+2	Nord 3 Phone	900000
+3	iPhone Cover	25000
+4	Universal Adaptor	40000
+5	Power Bank	80000
+6	Ramm 8GB	40000
+7	SSD 256 GB	250000
+8	Portable Lens	30000
+9	External HD	120000
