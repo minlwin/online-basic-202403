@@ -1,9 +1,9 @@
-1	Think Pad Laptop	1800000
-2	Nord 3 Phone	900000
-3	iPhone Cover	25000
-4	Universal Adaptor	40000
-5	Power Bank	80000
-6	Ramm 8GB	40000
-7	SSD 256 GB	250000
-8	Portable Lens	30000
-9	External HD	120000
+1	Foods	Potato Chips	1200
+2	Foods	Fish Chips	1500
+3	Foods	Peenuts	1000
+4	Foods	Pucci Cake	1500
+5	Drinks	Coke 250 ML	800
+6	Drinks	Coke 500 ML	1200
+7	Drinks	Pepsi 250 ML	700
+8	Drinks	Pepsi 500 ML	1000
+9	Drinks	Nest Caffe	2500

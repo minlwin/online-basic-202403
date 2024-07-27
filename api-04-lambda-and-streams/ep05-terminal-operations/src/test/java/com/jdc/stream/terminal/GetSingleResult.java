@@ -19,7 +19,7 @@ public class GetSingleResult {
 				.map(Product::from)
 				.max((a, b) -> a.price() - b.price());
 			
-			System.out.println(product);
+			product.ifPresent(a -> System.out.println(a));
 			
 		} catch (IOException e) {
 			e.printStackTrace();
