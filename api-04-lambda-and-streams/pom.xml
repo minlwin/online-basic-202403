@@ -33,5 +33,6 @@
 		<module>ep02-functional-interfaces</module>
 		<module>ep03-stream-creation</module>
 		<module>ep04-intermedeite-operations</module>
+		<module>ep05-terminal-operations</module>
 	</modules>
 </project>
